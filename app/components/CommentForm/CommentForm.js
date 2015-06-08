@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var template = require('./CommentFormTemplate.jsx');
 
 var CommentForm = React.createClass({
   handleSubmit: function(e) {
@@ -15,13 +16,7 @@ var CommentForm = React.createClass({
     React.findDOMNode(this.refs.text).value = '';
   },
   render: function() {
-    return (
-      <form className="commentForm" onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Your name" ref="author" />
-        <input type="text" placeholder="Say something..." ref="text" />
-        <input type="submit" value="Post" />
-      </form>
-    );
+    return template.bind(this)();
   }
 });
 

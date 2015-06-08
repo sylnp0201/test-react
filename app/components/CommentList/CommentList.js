@@ -1,11 +1,12 @@
 "use strict";
 
 var React = require('react');
-var Comment = require('./Comment');
+var Comment = require('../Comment/Comment');
+var template = require('./CommentListTemplate.jsx');
 
 var CommentList = React.createClass({
-  render: function() {
-    var commentNodes = this.props.data.map(function(comment, index) {
+  commentNodes: function() {
+    return this.props.data.map(function(comment, index) {
       return (
         // `key` is a React-specific concept and is not mandatory for the
         // purpose of this tutorial. if you're curious, see more here:
@@ -15,11 +16,11 @@ var CommentList = React.createClass({
         </Comment>
       );
     });
-    return (
-      <div className="commentList">
-        {commentNodes}
-      </div>
-    );
+  },
+
+  render: function() {
+    var commentNodes = this.commentNodes();
+    return template.bind(this)(commentNodes);
   }
 });
 

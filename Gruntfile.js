@@ -13,7 +13,8 @@ module.exports = function(grunt) {
     browserify: {
       build: {
         src: [
-          "app/**/*.js"
+          "app/**/*.js",
+          "app/**/*.jsx"
         ],
         dest: "public/scripts/app.js",
         options: {

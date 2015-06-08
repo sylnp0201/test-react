@@ -1,8 +1,9 @@
 "use strict";
 
 var React = require('react');
-var CommentList = require('./CommentList');
-var CommentForm = require('./CommentForm');
+var CommentList = require('../CommentList/CommentList');
+var CommentForm = require('../CommentForm/CommentForm');
+var template = require('./CommentBoxTemplate');
 
 var CommentBox = React.createClass({
   loadCommentsFromServer: function() {
@@ -47,13 +48,9 @@ var CommentBox = React.createClass({
     setInterval(this.loadCommentsFromServer, this.props.pollInterval);
   },
   render: function() {
-    return (
-      <div className="commentBox">
-        <h1>Comments</h1>
-        <CommentList data={this.state.data} />
-        <CommentForm onCommentSubmit={this.handleCommentSubmit} />
-      </div>
-    );
+    this.commentList = (<CommentList data={this.state.data} />);
+    this.commentForm = (<CommentForm onCommentSubmit={this.handleCommentSubmit} />);
+    return template.bind(this)();
   }
 });
 
