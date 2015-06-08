@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     browserify: {
       build: {
         src: [
-          "app/app.js"
+          "app/**/*.js"
         ],
         dest: "public/scripts/app.js",
         options: {
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: 'app/app.js',
+        files: 'app/**/*.js',
         tasks: ['build'],
         options: {
           debounceDelay: 250,
