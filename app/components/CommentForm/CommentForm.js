@@ -1,7 +1,7 @@
 "use strict";
 
 var React = require('react');
-var template = require('./CommentFormTemplate.jsx');
+var template = require('./CommentFormTemplate');
 
 var CommentForm = React.createClass({
   handleSubmit: function(e) {

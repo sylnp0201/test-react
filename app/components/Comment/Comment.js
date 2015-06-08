@@ -1,7 +1,7 @@
 "use strict";
 
 var React = require('react');
-var template = require('./CommentTemplate.jsx');
+var template = require('./CommentTemplate');
 
 var Comment = React.createClass({
   render: function() {

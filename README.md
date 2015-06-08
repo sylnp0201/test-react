@@ -1,18 +1,19 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-# React Tutorial
+# My React Playground
 
 This is the React comment box example from [the React tutorial](http://facebook.github.io/react/docs/tutorial.html).
 
-## To use
+### Features
 
-There are several simple server implementations included. They all serve static files from `public/` and handle requests to `comments.json` to fetch or add data. Start a server with one of the following:
+- NodeJS server implementation with a basic file organization for scaling.
+- All react components are separated into different files/folders.
+- Each component has its model/business logic separated from its template.
+- Browserify with reactify transformation is used to pack the client application code.
 
-### Node
+### To Run
 
 ```sh
 npm install
-node server.js
+grunt
 ```
 
 And visit <http://localhost:3000/>. Try opening multiple tabs!

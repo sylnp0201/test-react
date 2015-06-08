@@ -2,7 +2,7 @@
 
 var React = require('react');
 var Comment = require('../Comment/Comment');
-var template = require('./CommentListTemplate.jsx');
+var template = require('./CommentListTemplate');
 
 var CommentList = React.createClass({
   commentNodes: function() {
